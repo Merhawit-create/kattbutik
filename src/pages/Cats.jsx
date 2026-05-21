@@ -13,7 +13,20 @@ function Cats() {
     async function fetchCats() {
       const response = await fetch("https://api.thecatapi.com/v1/breeds?limit=30");
       const data = await response.json();
-      setCats(data);
+
+      const catsWithImages = data.map((cat) => ({
+  ...cat,
+  imageUrl:
+    cat.image?.url ||
+    (cat.reference_image_id
+      ? `https://cdn2.thecatapi.com/images/${cat.reference_image_id}.jpg`
+      : "https://placehold.co/400x300?text=No+Image"),
+}));
+
+setCats(catsWithImages);
+
+
+      //setCats(data);
     }
 
     fetchCats();

@@ -2,7 +2,8 @@ import { Card, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 function CatCard({ cat }) {
-  const imageUrl = cat.image?.url || "https://placehold.co/400x300?text=No+Image";
+  const imageUrl = cat.imageUrl;
+ // const imageUrl = cat.image?.url || "https://placehold.co/400x300?text=No+Image";
 
   return (
     <Card className="h-100 shadow-sm">
