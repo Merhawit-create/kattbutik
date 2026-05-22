@@ -3,13 +3,18 @@ import { Button, Modal, Form, ListGroup } from "react-bootstrap";
 import { useCart } from "../context/CartContext";
 
 function Cart() {
+   // Access cart data
   const { cartItems, clearCart } = useCart();
+  // Control modal visibility
   const [show, setShow] = useState(false);
-
+// Handle order form submit
   function handleSubmit(e) {
     e.preventDefault();
+    // Close modal
     setShow(false);
+    // Clear shopping cart
     clearCart();
+     // Show confirmation message
     alert("Tack! Din order är skickad.");
   }
 
@@ -22,6 +27,7 @@ function Cart() {
       ) : (
         <>
           <ListGroup className="mb-4">
+             {/* Show all selected cats */}
             {cartItems.map((cat, index) => (
               <ListGroup.Item key={`${cat.id}-${index}`}>
                 {cat.name} - {cat.origin}
@@ -32,7 +38,7 @@ function Cart() {
           <Button onClick={() => setShow(true)}>Skicka order</Button>
         </>
       )}
-
+  {/* Order form modal */}
       <Modal show={show} onHide={() => setShow(false)}>
         <Modal.Header closeButton>
           <Modal.Title>Orderformulär</Modal.Title>
