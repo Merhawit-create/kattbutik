@@ -59,7 +59,7 @@ setCats(catsWithImages);
 
       <Row>
         {visibleCats.map((cat) => (
-          <Col key={cat.id} xs={12} md={6} lg={4} className="mb-4">
+          <Col key={cat.id} xs={12} md={6} lg={6} className="mb-4">
             <CatCard cat={cat} />
           </Col>
         ))}
