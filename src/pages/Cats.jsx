@@ -4,11 +4,14 @@ import CatCard from "../components/CatCard";
 import PaginationControls from "../components/PaginationControls";
 
 function Cats() {
+   // Store cats from API
   const [cats, setCats] = useState([]);
+  // Store search input
   const [search, setSearch] = useState("");
+   // Current page number
   const [page, setPage] = useState(1);
   const catsPerPage = 10;
-
+ // Fetch cat data when component loads
   useEffect(() => {
     async function fetchCats() {
       const response = await fetch("https://api.thecatapi.com/v1/breeds?limit=30");
@@ -24,22 +27,20 @@ function Cats() {
 }));
 
 setCats(catsWithImages);
-
-
-      //setCats(data);
     }
 
     fetchCats();
   }, []);
 
+  // Filter cats based on search input
   const filteredCats = cats.filter((cat) =>
     cat.name.toLowerCase().includes(search.toLowerCase())
   );
-
+ // Calculate pagination
   const totalPages = Math.ceil(filteredCats.length / catsPerPage);
   const startIndex = (page - 1) * catsPerPage;
   const visibleCats = filteredCats.slice(startIndex, startIndex + catsPerPage);
-
+ // Reset to page 1 when searching
   function handleSearch(e) {
     setSearch(e.target.value);
     setPage(1);
