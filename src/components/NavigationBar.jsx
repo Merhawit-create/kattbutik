@@ -16,7 +16,7 @@ function NavigationBar() {
             <Nav.Link as={Link} to="/cats">Katter</Nav.Link>
             <Nav.Link as={Link} to="/about">Ägare</Nav.Link>
             <Nav.Link as={Link} to="/cart">
-              Kundvagn <Badge bg="warning">{cartItems.length}</Badge>
+              Kundvagn <Badge bg="warning"  text="dark">{cartItems.length}</Badge>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
