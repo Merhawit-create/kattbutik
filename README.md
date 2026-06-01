@@ -1,16 +1,51 @@
-# React + Vite
+# Kattbutik React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Detta projekt är en responsiv webbapplikation byggd med ReactJS som hämtar kattdata från The Cat API.
 
-Currently, two official plugins are available:
+Projektet är utvecklat som en del av kursens inlämningsuppgift DEL B.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Funktioner
 
-## React Compiler
+- Responsiv design för mobil, surfplatta och desktop
+- Navigation med React Router
+- Hämtar katter från Web API
+- Pagination med 10 katter per sida
+- Sökfunktion för kattraser
+- Detaljsida för varje katt
+- Kundvagn med Context API
+- Orderformulär i modal
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tekniker
 
-## Expanding the ESLint configuration
+Projektet är byggt med:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ReactJS
+- React Router DOM
+- React Bootstrap
+- Bootstrap
+- Context API
+- Vite
+
+## API
+
+Projektet använder:
+
+https://api.thecatapi.com/v1/breeds?limit=30
+
+## Installation och start
+
+Installera dependencies:
+
+```bash
+npm install
+```
+
+Starta projektet:
+
+```bash
+npm run dev
+```
+
+## Författare
+
+Merhawit
