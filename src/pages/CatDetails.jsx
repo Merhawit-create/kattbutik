@@ -24,8 +24,6 @@ function CatDetails() {
  // Show loading text before data is ready
   if (!cat) return <p>Laddar...</p>;
 
-
-
   const imageUrl =
   cat.imageUrl ||
   cat.image?.url ||
